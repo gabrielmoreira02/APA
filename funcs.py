@@ -14,10 +14,10 @@ def selectionSort(lista):
     return lista
 
 def insertionSort(lista):
-    for index in range(1,len(lista)):
+    for i in range(1,len(lista)):
 
-        currentvalue = lista[index]
-        position = index
+        currentvalue = lista[i]
+        position = i
 
         while position>0 and lista[position-1]>currentvalue:
              lista[position]=lista[position-1]
@@ -53,41 +53,41 @@ def mergeSort(x):
 
 
 
-def quickSort(alist):
+def quickSort(lista):
 
-  quickSortHelper(alist,0,len(alist)-1)
-  return alist
+  quickSortHelper(lista,0,len(lista)-1)
+  return lista
 
-def quickSortHelper(alist,first,last):
+def quickSortHelper(lista,first,last):
 
   if first<last:
-      splitpoint = partition(alist,first,last)
-      quickSortHelper(alist,first,splitpoint-1)
-      quickSortHelper(alist,splitpoint+1,last)
+      splitpoint = partition(lista,first,last)
+      quickSortHelper(lista,first,splitpoint-1)
+      quickSortHelper(lista,splitpoint+1,last)
 
-def partition(alist,first,last):
+def partition(lista,first,last):
 
-  pivotvalue = alist[first]
+  pivotvalue = lista[first]
   leftmark = first+1
   rightmark = last
   done = False
 
   while not done:
-      while leftmark <= rightmark and alist[leftmark] <= pivotvalue:
+      while leftmark <= rightmark and lista[leftmark] <= pivotvalue:
           leftmark = leftmark + 1
 
-      while alist[rightmark] >= pivotvalue and rightmark >= leftmark:
+      while lista[rightmark] >= pivotvalue and rightmark >= leftmark:
           rightmark = rightmark -1
 
       if rightmark < leftmark:
           done = True
       else:
-          temp = alist[leftmark]
-          alist[leftmark] = alist[rightmark]
-          alist[rightmark] = temp
+          temp = lista[leftmark]
+          lista[leftmark] = lista[rightmark]
+          lista[rightmark] = temp
 
-  temp = alist[first]
-  alist[first] = alist[rightmark]
-  alist[rightmark] = temp
+  temp = lista[first]
+  lista[first] = lista[rightmark]
+  lista[rightmark] = temp
 
   return rightmark
