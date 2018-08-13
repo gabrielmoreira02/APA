@@ -7,11 +7,11 @@ def marcadordetempo(function):
     print(function(numeros))
     end = time.time()
     timespent = end - start
-    print("o tempo gato pela funcao foi:", timespent)
+    print("o tempo gasto pela funcao foi:", timespent)
     return
 
 while True:
-    tipo = int(input("Qual funcao voce deseja testar? (1 para selectionSort, 2 para insertionSort):     "))
+    tipo = int(input("Qual funcao voce deseja testar? (1 para selectionSort, 2 para insertionSort, 3 para mergeSort e 4 para quickSort):     "))
     qtd = int(input("Com quantos elementos voce deseja testar?(100, 1000, 10000 ou 100000):            "))
 
     if qtd == 100:
@@ -31,12 +31,18 @@ while True:
     numeros = []
     for line in file:
         numeros.append(int(line))
+    numeros = numeros[1:]
 
 
     if tipo == 1:
+        print(len(numeros))
         marcadordetempo(selectionSort)
     elif tipo == 2:
         marcadordetempo(insertionSort)
+    elif tipo == 3:
+        marcadordetempo(mergeSort)
+    elif tipo == 4:
+        marcadordetempo(quickSort)
     else:
         print("opcao invalida")
         continue
