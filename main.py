@@ -43,6 +43,10 @@ while True:
         marcadordetempo(mergeSort)
     elif tipo == 4:
         marcadordetempo(quickSort)
+    elif tipo == 5:
+        marcadordetempo(countingSort)
+    elif tipo == 6:
+        marcadordetempo(radix_sort)
     else:
         print("opcao invalida")
         continue
