@@ -1,3 +1,4 @@
+import numpy
 
 def selectionSort(lista):
     for i in range(len(lista)):
@@ -58,7 +59,7 @@ def quickSort(lista):
   quickSortHelper(lista,0,len(lista)-1)
   return lista
 
-def quickSortHelper(lista,first,last):
+def quickSortHelper(lista, first, last):
 
   if first<last:
       splitpoint = partition(lista,first,last)
@@ -91,3 +92,40 @@ def partition(lista,first,last):
   lista[rightmark] = temp
 
   return rightmark
+
+
+
+def countingSort(lista):
+
+    c=[]
+    b=[0]*len(lista)
+    menor = min(lista)
+
+    if(menor<= 0):
+        for i in range(0, len(lista)):
+            lista[i] = lista[i] - menor
+
+
+    for j in range(0, max(lista)+1):
+        c.append(0)
+
+    for i in range(0, len(lista)):
+        c[lista[i]] += 1
+
+    for i in range(1, len(c)):
+        c[i] += c[i-1]
+
+    for i in reversed(range(0, len(lista))):
+        b[c[lista[i]]-1] = lista[i]
+        c[lista[i]] -= 1
+
+    if(menor<= 0):
+        for i in range(0, len(b)):
+            b[i] = b[i] + menor
+
+    print(len(b))
+    return b
+
+
+
+
