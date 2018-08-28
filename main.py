@@ -11,7 +11,8 @@ def marcadordetempo(function):
     return
 
 while True:
-    tipo = int(input("Qual funcao voce deseja testar? (1 para selectionSort, 2 para insertionSort, 3 para mergeSort e 4 para quickSort):     "))
+    tipo = int(input("Qual funcao voce deseja testar? (1 para selectionSort, 2 para insertionSort, 3 para mergeSort, 4 para quickSort,"
+                     "5 para countingSort e 6 para radix):     "))
     qtd = int(input("Com quantos elementos voce deseja testar?(100, 1000, 10000 ou 100000):            "))
 
     if qtd == 100:
